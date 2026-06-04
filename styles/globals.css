@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@import "./theme/card.css";
+
+:root {
+  --background: #f8f2e7;
+  --foreground: #2f241d;
+}
+
+@theme {
+  --color-red-50:  #fff1f0;
+  --color-red-100: #ffe0dd;
+  --color-red-200: #ffc0ba;
+  --color-red-300: #ff978f;
+  --color-red-400: #f7685d;
+  --color-red-500: #ed4336;
+  --color-red-600: #d3382c;
+  --color-red-700: #b02e24;
+  --color-red-800: #912720;
+  --color-red-900: #78231f;
+  --color-red-950: #410f0d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-vazir: var(--font-vazir);
+}
+
+body.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}

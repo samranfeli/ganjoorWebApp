@@ -1,0 +1,54 @@
+:root {
+
+   /* White */
+  --card-white-bg: #ffffff;
+  --card-white-border: #ece7df;
+  --card-white-foreground: #2f241d;
+
+  /* Gray */
+  --card-gray-bg: #f5f4f2;
+  --card-gray-border: #e4e1dc;
+  --card-gray-foreground: #40362f;
+
+  /* Purple */
+  --card-purple-bg: #f6f2fc;
+  --card-purple-border: #e8dcfb;
+  --card-purple-foreground: #43325d;
+
+  /* Rose */
+  --card-rose-bg: #fdf2f3;
+  --card-rose-border: #f8dde0;
+  --card-rose-foreground: #694046;
+
+  /* Gold */
+  --card-gold-bg: #fcf8ee;
+  --card-gold-border: #efe3c0;
+  --card-gold-foreground: #5e4a22;
+}
+
+.dark {
+  /* White */
+  --card-white-bg: #23201d;
+  --card-white-border: #34302b;
+  --card-white-foreground: #f3ede5;
+
+  /* Gray */
+  --card-gray-bg: #272523;
+  --card-gray-border: #3a3733;
+  --card-gray-foreground: #ece7df;
+
+  /* Purple */
+  --card-purple-bg: #2a2335;
+  --card-purple-border: #3c314c;
+  --card-purple-foreground: #ece4ff;
+
+  /* Rose */
+  --card-rose-bg: #332428;
+  --card-rose-border: #4a3238;
+  --card-rose-foreground: #ffe7ea;
+
+  /* Gold */
+  --card-gold-bg: #322a1d;
+  --card-gold-border: #4c412c;
+  --card-gold-foreground: #f5e6b9;
+}

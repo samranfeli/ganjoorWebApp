@@ -1,7 +1,7 @@
+import { Container } from "@/components/ui/container";
+
 export default function Home() {
   return (
-    <div>
-      گنجور
-    </div>
+    <Container>گنجور</Container>
   );
 }

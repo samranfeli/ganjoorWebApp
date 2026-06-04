@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "@/styles/globals.css";
 import QueryProvider from "@/providers/query-provider";
 import { vazir } from "@/lib/fonts";
 
