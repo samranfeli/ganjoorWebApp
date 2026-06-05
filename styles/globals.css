@@ -5,6 +5,13 @@
 :root {
   --background: #f8f2e7;
   --foreground: #2f241d;
+  --header-bg: #e8d8c4;
+}
+
+body.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --header-bg: #211b18;
 }
 
 @theme {
@@ -25,11 +32,6 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-vazir: var(--font-vazir);
-}
-
-body.dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
 }
 
 body {

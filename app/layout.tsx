@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import QueryProvider from "@/providers/query-provider";
 import { vazir } from "@/lib/fonts";
+import Footer from "@/components/layout/footer";
 
 export const metadata: Metadata = {
   title: "",
@@ -20,8 +21,9 @@ export default function RootLayout({
       className={`${vazir.className} h-full antialiased`}
     >
       <QueryProvider>
-        <body className="min-h-full flex flex-col">
+        <body className="min-h-screen flex flex-col" dir="rtl">
           {children}
+          <Footer />
         </body>
       </QueryProvider>
     </html>
