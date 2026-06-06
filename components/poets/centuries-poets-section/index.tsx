@@ -26,11 +26,11 @@ export default function CenturiesPoetsSection({
       </SectionHeading>
 
       <div className="relative flex">
-        <div className="hidden md:block w-24 flex-none" />
+        <div className="hidden md:block w-32 flex-none" />
         <div className="grow md:px-5">
           <CenturiesList centuries={centuries} />
         </div>
-        <div className="hidden md:block w-24 flex-none">
+        <div className="hidden md:block w-32 flex-none">
           <CenturiesNavigation items={navigationItems} />
         </div>
       </div>
