@@ -17,7 +17,7 @@ export default function PoetItem({poet,imagePriority}:{poet: PoetItemType, image
                 />
             </div>
             
-            <h3 className="mt-2 transition-all leading-5 text-sm">{poet.name}</h3>
+            <h3 className="mt-2 transition-all leading-5 text-sm">{poet.nickname}</h3>
 
         </Link>
     )

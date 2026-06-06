@@ -15,6 +15,8 @@ export default function MainHeader() {
             height={112}
             className="w-16 h-16 md:w-20 md:h-20"
             sizes="(max-width: 767px) 64px, 80px"
+            priority
+            fetchPriority="high"
           />
         </Link>
         <div className="flex items-center gap-3">
