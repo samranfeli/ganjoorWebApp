@@ -5,7 +5,7 @@ import { getCenturyElementId } from "@/lib/century";
 
 export default function Century({ century }: { century: CenturyItem }) {
   return (
-    <div id={getCenturyElementId(century.id)} className="py-6">
+    <div id={getCenturyElementId(century.id)} className="py-5">
       <Heading as="h3" size={"md"} className="mb-4 text-center">
         {century.name}
       </Heading>

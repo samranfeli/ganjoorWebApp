@@ -18,7 +18,7 @@ export default function CenturiesPoetsSection({
   );
 
   return (
-    <>
+    <section>
       <SectionHeading className="mb-0">
         <Heading as="h2" size="lg">
           دسته‌بندی بر اساس قرن
@@ -34,6 +34,6 @@ export default function CenturiesPoetsSection({
           <CenturiesNavigation items={navigationItems} />
         </div>
       </div>
-    </>
+    </section>
   );
 }

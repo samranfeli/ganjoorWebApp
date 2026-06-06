@@ -9,14 +9,14 @@ export default function FeaturedPoetsSection({
   poets: PoetItemType[];
 }) {
   return (
-    <>
-      <SectionHeading className="mb-6">
+    <section className="space-y-6">
+      <SectionHeading>
         <Heading as="h2" size="lg">
           سخنوران پرمخاطب
         </Heading>
       </SectionHeading>
 
-      <PoetsList poets={poets} className="mb-10" />
-    </>
+      <PoetsList poets={poets} />
+    </section>
   );
 }
