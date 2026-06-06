@@ -5,8 +5,8 @@ import { vazir } from "@/lib/fonts";
 import Footer from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: "",
-  description: "",
+  title: "گنجور",
+  description: "گنجینه شعر فارسی",
 };
 
 export default function RootLayout({

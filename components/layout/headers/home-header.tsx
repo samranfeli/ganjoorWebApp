@@ -13,6 +13,8 @@ export default function HomeHeader() {
           height={112}
           className="w-20 h-20 md:w-28 md:h-28 mx-auto"
           sizes="(max-width: 767px) 80px, 112px"
+          priority
+          fetchPriority="high"
         />
       </div>
       <div className="bg-(--header-bg) p-4">

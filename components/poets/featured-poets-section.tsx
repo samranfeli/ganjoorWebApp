@@ -16,7 +16,7 @@ export default function FeaturedPoetsSection({
         </Heading>
       </SectionHeading>
 
-      <PoetsList poets={poets} />
+      <PoetsList poets={poets} imagePriority />
     </section>
   );
 }
