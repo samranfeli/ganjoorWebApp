@@ -6,3 +6,8 @@ export interface CenturyItem {
   showInTimeLine?: boolean;
   poets: PoetItem[];
 }
+
+export type CenturiesNavigationItem = {
+  id: string;
+  label: string;
+};

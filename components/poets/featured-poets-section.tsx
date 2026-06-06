@@ -1,7 +1,7 @@
 import { Heading } from "../ui/typography/heading";
 import { SectionHeading } from "../ui/typography/section-heading";
 import { PoetItem as PoetItemType } from "@/types/poet";
-import PoetItem from "./poet-item";
+import PoetsList from "./poets-list";
 
 export default function FeaturedPoetsSection({
   poets,
@@ -16,11 +16,7 @@ export default function FeaturedPoetsSection({
         </Heading>
       </SectionHeading>
 
-      <div className="flex gap-5 flex-wrap justify-center">
-        {poets?.map((poet) => (
-          <PoetItem key={poet.id} poet={poet} />
-        ))}
-      </div>
+      <PoetsList poets={poets} className="mb-10" />
     </>
   );
 }
