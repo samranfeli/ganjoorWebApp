@@ -10,23 +10,6 @@ export default async function Home() {
 
   const centuries = await getCenturies();
 
-  const editedCentury = centuries?.map(century =>{
-    const poets = century.poets?.map(poet => ({
-      id: poet.id,
-      name: poet.name,
-      nickname: poet.nickname,
-      imageUrl: poet.imageUrl,
-      fullUrl: poet.fullUrl
-    }))
-
-    return({
-        id: century.id,
-        name: century.name,
-        showInTimeLine: century.showInTimeLine,
-        poets: poets
-    })
-  })
-
   return (
     <Container className="space-y-10 py-10">
 
@@ -38,13 +21,13 @@ export default async function Home() {
       </section>
 
       <FeaturedPoetsSection 
-        poets={editedCentury?.[0].poets}
+        poets={centuries?.[0].poets}
       />
 
       <PoetFilterSection />
 
       <CenturiesPoetsSection 
-        centuries={editedCentury.slice(1)}
+        centuries={centuries.slice(1)}
       />
 
     </Container>

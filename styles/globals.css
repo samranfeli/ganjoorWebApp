@@ -6,12 +6,16 @@
   --background: #f8f2e7;
   --foreground: #2f241d;
   --header-bg: #e8d8c4;
+  --link: #8b5e34;
+  --link-hover: #6f4722;
 }
 
 body.dark {
   --background: #0a0a0a;
   --foreground: #ededed;
   --header-bg: #211b18;
+  --link: #d4b483;
+  --link-hover: #e4c89c;
 }
 
 @theme {

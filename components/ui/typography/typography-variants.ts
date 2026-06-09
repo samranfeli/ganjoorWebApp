@@ -5,13 +5,13 @@ export const headingVariants = cva(
   {
     variants: {
       size: {
-        xs: 'text-sm',
-        sm: 'text-base',
-        md: 'text-lg',
-        lg: 'text-xl',
-        xl: 'text-2xl',
-        '2xl': 'text-3xl',
-        '3xl': 'text-4xl',
+        xs: 'text-xs sm:text-base',
+        sm: 'text-sm sm:text-lg',
+        md: 'text-base sm:text-xl',
+        lg: 'text-lg sm:text-2xl',
+        xl: 'text-xl sm:text-3xl',
+        '2xl': 'text-2xl sm:text-4xl',
+        '3xl': 'text-3xl sm:text-5xl',
       },
     },
     defaultVariants: {

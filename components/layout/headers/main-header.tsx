@@ -7,7 +7,7 @@ export default function MainHeader() {
   return (
     <header className="bg-(--header-bg)">
       <Container className="flex justify-between py-2">
-        <Link href={"/"} className="block">
+        <Link href={"/"} className="block outline-none">
           <Image
             src="/images/logo.png"
             alt="ganjoor logo"

@@ -2,10 +2,12 @@ import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Heading } from "@/components/ui/typography/heading";
 import { SectionHeading } from "@/components/ui/typography/section-heading";
-import { BASE_URL } from "@/lib/api/client";
+import { ApiError, BASE_URL } from "@/lib/api/client";
 import { getPoetDetail } from "@/lib/api/poet-detail";
+import { PoetDetail } from "@/types/poet";
 import { Metadata } from "next";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 type PoetPageProps = {
   params: Promise<{
@@ -17,18 +19,35 @@ export async function generateMetadata({
   params,
 }: PoetPageProps): Promise<Metadata> {
   const { poet: poetUrl } = await params;
-  const data = await getPoetDetail(`/${poetUrl}`);
 
-  return {
-    title: data.poet.name,
-    description: data.poet.description,
-  };
+  try {
+    const data = await getPoetDetail(`/${poetUrl}`);
+
+    return {
+      title: data.poet.name,
+      description: data.poet.description,
+    };
+  } catch {
+    return {
+      title: "شاعر یافت نشد",
+    };
+  }
 }
 
 export default async function Poet({ params }: PoetPageProps) {
   const { poet: poetUrl } = await params;
 
-  const data = await getPoetDetail(`/${poetUrl}`);
+  let data: PoetDetail;
+  try {
+    data = await getPoetDetail(`/${poetUrl}`);
+  } catch (error) {
+    if (error instanceof ApiError && error.status === 404) {
+      notFound();
+    }
+
+    throw error;
+  }
+
   const { poet, cat } = data;
 
   const poetYears = [poet.birthYearInLHijri, poet.deathYearInLHijri]

@@ -20,18 +20,18 @@ export async function apiClient<T>(
     {
       ...options,
       headers: {
-        'Content-Type': 'application/json',
+        'Accept': 'application/json',
         ...options?.headers,
       },
     }
   );
-
+  
   if (!response.ok) {
-    throw new ApiError(
-      response.status,
-      response.statusText
-    );
-  }
+  throw new ApiError(
+    response.status,
+    response.statusText,
+  );
+}
 
-  return response.json();
+  return response.json() as Promise<T>;
 }

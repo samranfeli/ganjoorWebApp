@@ -1,8 +1,8 @@
 import { BASE_URL } from "@/lib/api/client";
-import {PoetItem as PoetItemType } from "@/types/poet";
+import { PoetItem } from "@/types/poet";
 import Image from "next/image";
 import Link from "next/link";
-export default function PoetItem({poet,imagePriority}:{poet: PoetItemType, imagePriority?:boolean}){
+export default function PoetItemLink({poet,imagePriority}:{poet: PoetItem, imagePriority?:boolean}){
     return(
         <Link href={poet.fullUrl} className="group block w-20 text-center outline-none" >
             <div className={`transition-all md:group-hover:scale-105`}>
