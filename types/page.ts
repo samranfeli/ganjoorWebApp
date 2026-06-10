@@ -44,9 +44,9 @@ export interface GetPageByUrlResponse {
     previous: GanjoorPoemSummary;
     verses: Verse[];
 
-    recitations: Recitation[];
+    recitations: unknown; //todo type this Recitation[];
     images: unknown;//todo : type this
-    songs: Song[];
+    songs: unknown; //todo type this Song[];
     sections?: {
       id: number;
       poemId: number;
@@ -62,7 +62,7 @@ export interface GetPageByUrlResponse {
       poemFormat: PoemFormat;
     }[];
     sectionIndex?: number;
-    comments: Comment[];
+    comments: unknown; //todo type this Comment[];
   };
   next: {
     id: number;
