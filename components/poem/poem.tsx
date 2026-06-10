@@ -11,7 +11,7 @@ export default function Poem({ couplets }: PoemProps) {
   }
 
   return (
-    <div className="mb-6">
+    <div className="my-10">
       {couplets.map((couplet) => (
         <CoupletItem key={couplet[0].id} couplet={couplet} />
       ))}
