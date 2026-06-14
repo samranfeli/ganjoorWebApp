@@ -9,7 +9,9 @@ import { ApiError, BASE_URL } from "@/lib/api/client";
 import { getPoemDetail } from "@/lib/api/poem-detail";
 import { mapPoem } from "@/mappers/poem.mapper";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Fragment, ReactNode } from "react";
 
 type PoetPageProps = {
   params: Promise<{
@@ -56,18 +58,53 @@ export default async function Poem({ params }: PoetPageProps) {
 
   const cat = data.poetOrCat?.cat;
 
+  const breadcrumbLabelSegments = data.fullTitle?.split(" » ").filter(Boolean);
+  const breadcrumbUrlSegments = data.fullUrl?.split("/").filter(Boolean);
+  const breadcrumbSegments: {
+    url?: string;
+    label: string;
+  }[] = breadcrumbLabelSegments?.map((item, index) => {
+
+    let segmentUrl = "";
+    if (index < breadcrumbLabelSegments.length - 1 ){
+      segmentUrl = breadcrumbUrlSegments?.slice(0, index+1).join("/") || "";
+    }
+
+    return {
+      label: item,
+      url: segmentUrl && "/"+segmentUrl ,
+    };
+  }) || [];
+
+  const breadcrumb = (
+    <div className="flex justify-center gap-1 mb-6 text-xs text-center">
+      {breadcrumbSegments.map((item, index) => (
+        <Fragment key={item.label}>
+          {!!index && <span> » </span>}
+          {item.url ? (
+            <Link href={item.url}>{item.label}</Link>
+          ):(
+            <span>{item.label}</span>
+          )}
+        </Fragment>
+      ))}
+    </div>
+  );
+
   return (
     <Container className="py-10">
       {poetImageUrl && (
-        <Image
-          src={poetImageUrl}
-          alt=""
-          className="rounded-full block w-20 mx-auto mb-2"
-          width={82}
-          height={100}
-          priority
-          fetchPriority="high"
-        />
+        <Link href={`/${poetUrl}`}>
+          <Image
+            src={poetImageUrl}
+            alt=""
+            className="rounded-full block w-20 mx-auto mb-2"
+            width={82}
+            height={100}
+            priority
+            fetchPriority="high"
+          />
+        </Link>
       )}
 
       <SectionHeading className="mb-2">
@@ -78,9 +115,7 @@ export default async function Poem({ params }: PoetPageProps) {
         </Heading>
       </SectionHeading>
 
-      {data.fullTitle && (
-        <p className="mb-6 text-xs text-center">{data.fullTitle} </p>
-      )}
+      {breadcrumb}
 
       {cat?.description && (
         <p className="mb-6 text-xs text-center">{cat.description}</p>
