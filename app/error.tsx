@@ -2,7 +2,18 @@
 
 import Image from "next/image";
 
-export default function Error(error: Error) {
+export default function Error({
+  error,
+}: {
+  error: Error;
+}){
+  
+  console.log("error1", error);
+
+  let message = "متاسفانه خطایی رخ داده است!";
+  if(error.message){
+    message = error.message;
+  }
   return (
     <div className="flex flex-col justify-center items-center gap-6 grow">
       <Image
@@ -15,9 +26,9 @@ export default function Error(error: Error) {
         priority
         fetchPriority="high"
       />
-      متاسفانه خطایی رخ داده است!
+      
       <hr />
-      {error.message}
+      {message}
     </div>
   );
 }

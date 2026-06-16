@@ -8,6 +8,9 @@ export default function FeaturedPoetsSection({
 }: {
   poets: PoetItem[];
 }) {
+  
+  if(!poets?.length) return null;
+
   return (
     <section className="space-y-6">
       <SectionHeading>

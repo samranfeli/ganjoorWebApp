@@ -5,10 +5,17 @@ import { Container } from "@/components/ui/container";
 import { Heading } from "@/components/ui/typography/heading";
 import { Text } from "@/components/ui/typography/text";
 import { getCenturies } from "@/lib/api/centuries";
+import { CenturyItem } from "@/types/century";
 
 export default async function Home() {
 
-  const centuries = await getCenturies();
+  let centuries: CenturyItem[] = [];
+
+  try {
+    centuries = await getCenturies();
+  } catch {
+    centuries = [];
+  }
 
   return (
     <Container className="space-y-10 py-10">
@@ -21,13 +28,13 @@ export default async function Home() {
       </section>
 
       <FeaturedPoetsSection 
-        poets={centuries?.[0].poets}
+        poets={centuries?.[0]?.poets}
       />
 
       <PoetFilterSection />
 
       <CenturiesPoetsSection 
-        centuries={centuries.slice(1)}
+        centuries={centuries?.slice(1)}
       />
 
     </Container>

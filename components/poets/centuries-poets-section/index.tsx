@@ -10,6 +10,9 @@ export default function CenturiesPoetsSection({
 }: {
   centuries: CenturyItem[];
 }) {
+
+  if(!centuries.length) return null;
+
   const navigationItems: CenturiesNavigationItem[] = centuries.map(
     (century) => ({
       id: getCenturyElementId(century.id),

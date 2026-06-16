@@ -6,6 +6,7 @@ export class ApiError extends Error {
     message: string
   ) {
     super(message);
+    this.name = "ApiError";
   }
 }
 
@@ -27,9 +28,10 @@ export async function apiClient<T>(
   );
   
   if (!response.ok) {
+  const errorText = await response.text();
   throw new ApiError(
     response.status,
-    response.statusText,
+    errorText || response.statusText
   );
 }
 
