@@ -3,7 +3,7 @@
 import { SearchIcon } from "lucide-react";
 import { useState } from "react";
 import Modal from "../ui/modal";
-import { SearchForm } from "./search-form";
+import SearchForm  from "./search-form";
 import { Button } from "../ui/button";
 
 export default function Search() {

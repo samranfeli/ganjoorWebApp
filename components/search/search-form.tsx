@@ -11,7 +11,7 @@ import Skeleton from "../ui/skeleton";
 import { cn } from "@/lib/utils";
 import { useMemo } from "react";
 
-export function SearchForm({
+export default function SearchForm({
   onSuccess,
   wrapperClassName,
 }: {
