@@ -59,6 +59,7 @@ export default function PoetFilterSection() {
       <div className="mx-auto max-w-md">
         <Input
           value={filter}
+          className="bg-background"
           onChange={(e) => setFilter(e.target.value)}
           placeholder="نام شاعر را وارد کنید..."
         />

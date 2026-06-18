@@ -1,4 +1,4 @@
-import Skeleton from "@/components/ui/Skeleton";
+import Skeleton from "@/components/ui/skeleton";
 
 const LIST_ITEMS_COUNT = 5;
 const BUTTONS_COUNT = 3;

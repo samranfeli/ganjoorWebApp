@@ -8,6 +8,7 @@ export const buttonVariants = cva(
     "transition-colors",
     "focus-visible:outline-none",
     "focus-visible:ring-2",
+    "cursor-pointer",
     "disabled:pointer-events-none",
     "disabled:opacity-50",
     "leading-4",
@@ -23,7 +24,7 @@ export const buttonVariants = cva(
 
         outline: "border border-[#D6C7B3] text-[#2F241D] hover:bg-[#F3EBDD]",
 
-        ghost: "text-[#6D4C3D] hover:bg-[#E7DCCB]",
+        ghost: "text-[#6D4C3D]",
 
         destructive: "bg-[#C93C2A] text-white hover:bg-[#AF3425]",
       },

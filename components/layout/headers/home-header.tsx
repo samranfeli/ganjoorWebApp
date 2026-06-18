@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Container } from "../../ui/container";
-import { Search, User } from "lucide-react";
+import { User } from "lucide-react";
+import Search from "@/components/search";
 
 export default function HomeHeader() {
   return (
@@ -18,7 +19,7 @@ export default function HomeHeader() {
         />
       </div>
       <div className="bg-(--header-bg) p-4">
-        <Container className="flex justify-between">
+        <Container className="flex justify-between items-center">
           <Search />
           <User />
         </Container>

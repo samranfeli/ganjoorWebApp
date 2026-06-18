@@ -24,6 +24,7 @@ export default function RootLayout({
         <body className="min-h-screen flex flex-col" dir="rtl">
           {children}
           <Footer />
+           <div id="modal_root" />
         </body>
       </QueryProvider>
     </html>
