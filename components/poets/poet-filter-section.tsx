@@ -9,7 +9,7 @@ import PoetsList from "@/components/poets/poets-list";
 import { queryKeys } from "@/lib/query/query-keys";
 import { getPoets } from "@/lib/api/poets";
 import { SectionHeading } from "../ui/typography/section-heading";
-import { Heading } from "../ui/typography/heading";
+import Heading from "../ui/typography/heading";
 import Input from "../ui/input";
 
 function normalizeText(text: string) {

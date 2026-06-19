@@ -1,6 +1,6 @@
 import { Fragment } from "react/jsx-runtime";
 import { Card } from "../ui/card";
-import { Heading } from "../ui/typography/heading";
+import Heading from "../ui/typography/heading";
 import { Couplet } from "@/types/poem";
 
 type PoemMeaningProps = {

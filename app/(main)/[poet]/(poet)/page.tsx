@@ -1,6 +1,6 @@
 import { ButtonLink } from "@/components/ui/button";
-import { Container } from "@/components/ui/container";
-import { Heading } from "@/components/ui/typography/heading";
+import Container from "@/components/ui/container";
+import Heading from "@/components/ui/typography/heading";
 import { SectionHeading } from "@/components/ui/typography/section-heading";
 import { ApiError, BASE_URL } from "@/lib/api/client";
 import { getPoetDetail } from "@/lib/api/poet-detail";

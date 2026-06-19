@@ -1,8 +1,8 @@
 import CenturiesPoetsSection from "@/components/poets/centuries-poets-section";
 import FeaturedPoetsSection from "@/components/poets/featured-poets-section";
 import PoetFilterSection from "@/components/poets/poet-filter-section";
-import { Container } from "@/components/ui/container";
-import { Heading } from "@/components/ui/typography/heading";
+import Container from "@/components/ui/container";
+import Heading from "@/components/ui/typography/heading";
 import { Text } from "@/components/ui/typography/text";
 import { getCenturies } from "@/lib/api/centuries";
 import { CenturyItem } from "@/types/century";

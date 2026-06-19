@@ -1,4 +1,4 @@
-import { Heading } from "@/components/ui/typography/heading";
+import Heading from "@/components/ui/typography/heading";
 import { SectionHeading } from "@/components/ui/typography/section-heading";
 import { CenturiesNavigationItem, CenturyItem } from "@/types/century";
 import CenturiesNavigation from "./centuries-navigation";

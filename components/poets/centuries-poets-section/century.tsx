@@ -1,4 +1,4 @@
-import { Heading } from "@/components/ui/typography/heading";
+import Heading from "@/components/ui/typography/heading";
 import { CenturyItem } from "@/types/century";
 import PoetsList from "../poets-list";
 import { getCenturyElementId } from "@/lib/century";

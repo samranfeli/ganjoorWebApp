@@ -1,3 +1,6 @@
+import { Cat } from "./cat";
+import { PoetItem } from "./poet";
+
 export interface Verse {
   coupletIndex?: number;
   coupletSummary?: string;
@@ -62,4 +65,14 @@ export interface Poem {
   parentUrl?: string;
 
   sections?: PoemSection[];
+}
+
+export interface PoemSearchItem {
+  plainText?: string;
+  category: {
+    poet: PoetItem;
+    cat: Cat;
+  };
+  fullTitle?: string;
+  fullUrl?: string;
 }
