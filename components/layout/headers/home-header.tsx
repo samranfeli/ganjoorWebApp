@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Container } from "../../ui/container";
-import { Search, User } from "lucide-react";
+import { User } from "lucide-react";
+import Search from "@/app/(main)/search";
 
 export default function HomeHeader() {
   return (
