@@ -13,7 +13,7 @@ export default async function Search({ searchParams }: SearchPageProps) {
 
   const searchQuery = String(params.s ?? "");
 
-  const authorId = Number(params.author ?? 0);
+  //const authorId = Number(params.author ?? 0);
 
   if (!searchQuery.trim()) {
     notFound();
@@ -25,7 +25,9 @@ export default async function Search({ searchParams }: SearchPageProps) {
         نتایج جستجوی «{searchQuery}»
       </Heading>
       {/* <SearchForm wrapperClassName="mb-6" /> */}
-      <SearchList poetId={+authorId} term={searchQuery} />
+      <SearchList 
+      //poetId={+authorId} term={searchQuery}
+       />
     </Container>
   );
 }

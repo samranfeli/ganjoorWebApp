@@ -1,5 +1,5 @@
 "use client";
-
+/* 
 import { search } from "@/lib/api/search";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
@@ -8,20 +8,22 @@ import SearchListItem from "./search-list-item";
 import { Text } from "../ui/typography/text";
 import { AlertTriangle } from "lucide-react";
 import SearchListLoading from "./search-list-loading";
-import { queryKeys } from "@/lib/query/query-keys";
+import { queryKeys } from "@/lib/query/query-keys"; */
 
-export default function SearchList({
+export default function SearchList(
+/*   {
   term,
   poetId,
 }: {
   term: string;
   poetId: number;
-}) {
-  const { ref, inView } = useInView();
+} */
+) {
+  //const { ref, inView } = useInView();
 
-  const PAGE_SIZE = 10;
+  //const PAGE_SIZE = 10;
 
-  const {
+/*   const {
     isError,
     isPending,
     error,
@@ -73,11 +75,12 @@ export default function SearchList({
   if (isFetchingNextPage) {
     loading = <SearchListLoading quantity={2} />;
 
-  }
+  } */
   return (
     <div>
+      در حال توسعه
 
-      {data?.pages.map((page, i) => (
+{/*       {data?.pages.map((page, i) => (
         <div key={i}>
           {page.data.map((item) => (
             <SearchListItem key={item.fullUrl} item={item} term={term} />
@@ -86,8 +89,8 @@ export default function SearchList({
       ))}
 
       {loading}
-
       <div ref={ref} />
+ */}
     </div>
   );
 }
