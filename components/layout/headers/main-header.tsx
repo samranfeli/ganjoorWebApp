@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Container } from "../../ui/container";
 import Link from "next/link";
 import { User } from "lucide-react";
-import Search from "@/app/(main)/search";
+import Search from "@/components/search";
 
 export default function MainHeader() {
   return (
