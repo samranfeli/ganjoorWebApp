@@ -8,6 +8,7 @@ export const buttonVariants = cva(
     "transition-colors",
     "focus-visible:outline-none",
     "focus-visible:ring-2",
+    "cursor-pointer",
     "disabled:pointer-events-none",
     "disabled:opacity-50",
     "leading-4",

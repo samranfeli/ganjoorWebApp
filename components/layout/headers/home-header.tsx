@@ -19,7 +19,7 @@ export default function HomeHeader() {
         />
       </div>
       <div className="bg-(--header-bg) p-4">
-        <Container className="flex justify-between">
+        <Container className="flex justify-between items-center">
           <Search />
           <User />
         </Container>

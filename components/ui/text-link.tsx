@@ -10,7 +10,7 @@ export function TextLink({ className, children, ...props }: TextLinkProps) {
   return (
     <Link
       className={cn(
-        "text-(--link) hover:text-(--link-hover) transition-colors",
+        "text-(--link) hover:text-(--link-hover) transition-colors outline-0",
         className,
       )}
       {...props}
