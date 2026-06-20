@@ -2,8 +2,8 @@ import ContentChildrenList from "@/components/poem/content-children-list";
 import PoemContent from "@/components/poem/poem-content";
 import PoemList from "@/components/poem/poem-list";
 import { Card } from "@/components/ui/card";
-import { Container } from "@/components/ui/container";
-import { Heading } from "@/components/ui/typography/heading";
+import Container from "@/components/ui/container";
+import Heading from "@/components/ui/typography/heading";
 import { SectionHeading } from "@/components/ui/typography/section-heading";
 import { ApiError, BASE_URL } from "@/lib/api/client";
 import { getPoemDetail } from "@/lib/api/poem-detail";
@@ -11,7 +11,7 @@ import { mapPoem } from "@/mappers/poem.mapper";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Fragment, ReactNode } from "react";
+import { Fragment } from "react";
 
 type PoetPageProps = {
   params: Promise<{

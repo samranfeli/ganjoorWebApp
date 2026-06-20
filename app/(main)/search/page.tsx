@@ -1,8 +1,7 @@
 /* import SearchForm from "@/components/search/search-form"; */
 import SearchList from "@/components/search/search-list";
-import { Container } from "@/components/ui/container";
-import { Heading } from "@/components/ui/typography/heading";
-import { notFound } from "next/navigation";
+import Container from "@/components/ui/container";
+import Heading from "@/components/ui/typography/heading";
 
 type SearchPageProps = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
@@ -11,12 +10,12 @@ type SearchPageProps = {
 export default async function Search({ searchParams }: SearchPageProps) {
   const params = await searchParams;
 
-  const searchQuery = String(params.s ?? "");
+  const searchQuery = String(params?.s || "");
 
   //const authorId = Number(params.author ?? 0);
 
   if (!searchQuery.trim()) {
-    notFound();
+    return null
   }
 
   return (

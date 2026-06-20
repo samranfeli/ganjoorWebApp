@@ -1,6 +1,6 @@
 "use client";
 
-import { Heading } from "@/components/ui/typography/heading";
+import Heading from "@/components/ui/typography/heading";
 import Image from "next/image";
 
 export default function NotFound() {

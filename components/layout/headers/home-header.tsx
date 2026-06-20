@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Container } from "../../ui/container";
+import Container from "../../ui/container";
 import { User } from "lucide-react";
 import Search from "@/components/search";
 

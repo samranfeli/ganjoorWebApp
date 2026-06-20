@@ -1,7 +1,7 @@
 import { PoemSearchItem } from "@/types/poem";
 import parse from "html-react-parser";
 import { TextLink } from "../ui/text-link";
-import { Heading } from "../ui/typography/heading";
+import Heading from "../ui/typography/heading";
 import Image from "next/image";
 import { BASE_URL } from "@/lib/api/client";
 import extractSearchContext from "@/lib/search/extract-search-context";

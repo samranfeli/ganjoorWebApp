@@ -1,5 +1,5 @@
 import { PoetItem } from "@/types/poet";
-import { Heading } from "../ui/typography/heading";
+import Heading from "../ui/typography/heading";
 import { SectionHeading } from "../ui/typography/section-heading";
 import PoetsList from "./poets-list";
 
