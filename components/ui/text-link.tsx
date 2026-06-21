@@ -1,7 +1,7 @@
-import Link, { LinkProps } from "next/link";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-type TextLinkProps = LinkProps & {
+type TextLinkProps = React.ComponentPropsWithoutRef<typeof Link> & {
   className?: string;
   children: React.ReactNode;
 };
