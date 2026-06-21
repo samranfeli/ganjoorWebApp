@@ -27,7 +27,7 @@ export default function AccordionItem({
         type="button"
         onClick={() => setOpen((prevOpen) => !prevOpen)}
         className={cn(
-          "w-full flex items-center justify-between cursor-pointer",
+          "w-full flex gap-3 items-start justify-between cursor-pointer text-right outline-none",
           buttonClassName,
         )}
       >
@@ -35,7 +35,7 @@ export default function AccordionItem({
 
         <ChevronDown
           className={cn(
-            "w-4 h-4 transition-transform duration-300",
+            "mt-0.5 w-5 h-5 transition-transform duration-300 shrink-0",
             open && "rotate-180",
           )}
         />
@@ -48,7 +48,7 @@ export default function AccordionItem({
         )}
       >
         <div className="overflow-hidden">
-          <div className={cn(contentClassName)}>{content}</div>
+          <div className={cn("text-justify",contentClassName)}>{content}</div>
         </div>
       </div>
     </div>

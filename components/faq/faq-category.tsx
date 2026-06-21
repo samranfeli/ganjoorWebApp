@@ -25,15 +25,16 @@ export default async function FaqCategory({
 
   return (
     <div className="mb-10">
-      <Heading as="h2" size="sm">
+        
+      <Heading as="h2" size="lg">
         {title}
       </Heading>
 
-      {description && <Text className="text-sm">{description}</Text>}
+      {description && <Text className="text-sm mt-1">{description}</Text>}
 
       <Accordion
         items={accordionItems}
-        buttonClassName="py-4"
+        buttonClassName="py-4 text-(--link) hover:text-(--link-hover) transition-colors"
         itemClassName="border-t border-black/20 dark:border-white/20"
         contentClassName={cn("pb-4 pr-6", classes.content)}
         wrapperClassName="mt-5"

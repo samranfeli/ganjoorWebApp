@@ -10,7 +10,7 @@ export default async function Faq() {
   return (
     <Container className="py-10">
       <SectionHeading className="mb-6">
-        <Heading as="h1" size="lg">
+        <Heading as="h1" size="xl">
           پرسش های متداول
         </Heading>
       </SectionHeading>
