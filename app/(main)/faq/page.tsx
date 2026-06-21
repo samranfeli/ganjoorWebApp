@@ -8,9 +8,9 @@ export default async function Faq() {
   const faqs = await getFaqCategories();
 
   return (
-    <Container className="py-10">
-      <SectionHeading className="mb-6">
-        <Heading as="h1" size="xl">
+    <Container className="py-8 md:py-24">
+      <SectionHeading className="mb-5 md:mb-12">
+        <Heading as="h1" size="lg">
           پرسش های متداول
         </Heading>
       </SectionHeading>

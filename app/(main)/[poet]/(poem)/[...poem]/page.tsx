@@ -77,7 +77,7 @@ export default async function Poem({ params }: PoetPageProps) {
   }) || [];
 
   const breadcrumb = (
-    <div className="flex justify-center gap-1 mb-6 text-xs text-center">
+    <div className="flex flex-wrap justify-center gap-1 mb-6 text-xs text-center">
       {breadcrumbSegments.map((item, index) => (
         <Fragment key={item.label}>
           {!!index && <span> » </span>}

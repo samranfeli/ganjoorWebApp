@@ -19,7 +19,7 @@ export default function Footer() {
   return (
     <footer>
       <Container className="py-5 border-t border-neutral-300">
-        <div className="flex flex-wrap gap-5 justify-center text-sm mb-2">
+        <div className="flex flex-wrap gap-5 justify-center text-sm mb-5">
           {items.map((item) => (
             <TextLink key={item.url} href={item.url}>
               {item.label}

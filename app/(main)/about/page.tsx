@@ -7,9 +7,9 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <Container className="py-10">
-      <SectionHeading className="mb-6">
-        <Heading as="h1" size="xl">
+    <Container className="py-8 md:py-24">
+      <SectionHeading className="mb-5 md:mb-12">
+        <Heading as="h1" size="lg">
           دربارهٔ گنجور
         </Heading>
       </SectionHeading>
