@@ -36,7 +36,12 @@ export const buttonVariants = cva(
         icon: "h-10 w-10",
       },
     },
-
+    compoundVariants: [
+      {
+        variant: "ghost",
+        className: "px-0 h-auto"
+      },
+    ],
     defaultVariants: {
       variant: "primary",
       size: "md",
