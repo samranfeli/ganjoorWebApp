@@ -2,6 +2,8 @@
 
 @import "./theme/card.css";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #f8f2e7;
   --foreground: #2f241d;
@@ -10,7 +12,7 @@
   --link-hover: #6f4722;
 }
 
-body.dark {
+html.dark {
   --background: #0a0a0a;
   --foreground: #ededed;
   --header-bg: #211b18;

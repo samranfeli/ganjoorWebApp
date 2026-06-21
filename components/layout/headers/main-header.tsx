@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Container from "../../ui/container";
 import Link from "next/link";
-import { User } from "lucide-react";
 import Search from "@/components/search";
+import ThemeToggleButton from "../theme-toggle-button";
 
 export default function MainHeader() {
   return (
     <header className="bg-(--header-bg)">
-      <Container className="flex justify-between py-2">
+      <Container className="flex justify-between items-center py-2">
         <Link href={"/"} className="block outline-none">
           <Image
             src="/images/logo.png"
@@ -20,9 +20,9 @@ export default function MainHeader() {
             fetchPriority="high"
           />
         </Link>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-5">
           <Search />
-          <User />
+          <ThemeToggleButton />
         </div>
       </Container>
     </header>

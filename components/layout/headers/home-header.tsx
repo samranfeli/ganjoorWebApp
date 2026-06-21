@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Container from "../../ui/container";
-import { User } from "lucide-react";
 import Search from "@/components/search";
+import ThemeToggleButton from "../theme-toggle-button";
 
 export default function HomeHeader() {
   return (
@@ -21,7 +21,7 @@ export default function HomeHeader() {
       <div className="bg-(--header-bg) p-4">
         <Container className="flex justify-between items-center">
           <Search />
-          <User />
+          <ThemeToggleButton />
         </Container>
       </div>
     </header>

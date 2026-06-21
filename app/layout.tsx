@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import QueryProvider from "@/providers/query-provider";
 import { vazir } from "@/lib/fonts";
 import Footer from "@/components/layout/footer";
+import { ThemeProvider } from "@/providers/theme-context";
 
 export const metadata: Metadata = {
   title: "گنجور",
@@ -20,13 +21,15 @@ export default function RootLayout({
       dir="rtl"
       className={`${vazir.className} h-full antialiased`}
     >
-      <QueryProvider>
-        <body className="min-h-screen flex flex-col" dir="rtl">
-          {children}
-          <Footer />
-          <div id="modal_root" />
-        </body>
-      </QueryProvider>
+      <ThemeProvider>
+        <QueryProvider>
+          <body className="min-h-screen flex flex-col dark:bg-red-600" dir="rtl">
+            {children}
+            <Footer />
+            <div id="modal_root" />
+          </body>
+        </QueryProvider>
+      </ThemeProvider>
     </html>
   );
 }

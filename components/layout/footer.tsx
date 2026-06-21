@@ -1,5 +1,6 @@
 import Container from "../ui/container";
 import { TextLink } from "../ui/text-link";
+import ThemeToggleButton from "./theme-toggle-button";
 
 export default function Footer() {
   const items: {
@@ -17,14 +18,17 @@ export default function Footer() {
 
   return (
     <footer>
-      <Container>
-        <div className="py-5 border-t border-neutral-300 flex flex-wrap gap-5 justify-center text-sm">
+      <Container className="py-5 border-t border-neutral-300">
+        <div className="flex flex-wrap gap-5 justify-center text-sm mb-2">
           {items.map((item) => (
             <TextLink key={item.url} href={item.url}>
               {item.label}
             </TextLink>
           ))}
         </div>
+        <div className="text-center">
+          <ThemeToggleButton />
+        </div>      
       </Container>
     </footer>
   );
