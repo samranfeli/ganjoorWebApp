@@ -39,7 +39,7 @@ export const buttonVariants = cva(
     compoundVariants: [
       {
         variant: "ghost",
-        className: "px-0 h-auto"
+        className: "px-0 h-auto outline-none"
       },
     ],
     defaultVariants: {

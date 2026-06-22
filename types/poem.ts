@@ -76,3 +76,9 @@ export interface PoemSearchItem {
   fullTitle?: string;
   fullUrl?: string;
 }
+
+export interface Random {
+  fullUrl?: string;
+  fullTitle?: string;
+  verses: Verse[];
+}

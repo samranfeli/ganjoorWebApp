@@ -8,7 +8,7 @@ export default function MainLayout({
   return (
     <>
       <MainHeader />
-      <main className="grow">{children}</main>
+      <main className="grow flex flex-col items-stretch">{children}</main>
     </>
   );
 }
