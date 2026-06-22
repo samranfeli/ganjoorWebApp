@@ -56,9 +56,9 @@ export default function RandomPoem() {
         )}
 
         {isFetching ? (
-          <div className="flex gap-10 justify-center w-full">
-            <Skeleton className="w-1/3 h-5" />
-            <Skeleton className="w-1/3 h-5" />
+          <div className="flex flex-col lg:flex-row gap-x-10 gap-y-5 justify-center w-full">
+            <Skeleton className="w-2/3 lg:w-1/3 h-5" />
+            <Skeleton className="w-2/3 lg:w-1/3 h-5 self-end" />
           </div>
         ) : (
           <RandomCouplet couplets={couplets} />

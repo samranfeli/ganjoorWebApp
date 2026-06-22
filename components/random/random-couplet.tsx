@@ -9,9 +9,9 @@ export default function RandomCouplet({ couplets }: { couplets: Couplet[] }) {
   const randomCouplet = couplets[randomIndex];
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 justify-center w-full text-lg">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-3 justify-center w-full text-lg">
       {randomCouplet?.map((verse) => (
-        <div key={verse.id} className="odd:text-left even:text-right">{verse.text}</div>
+        <div key={verse.id} className="odd:text-right lg:odd:text-left even:text-left lg:even:text-right">{verse.text}</div>
       ))}
     </div>
   );
