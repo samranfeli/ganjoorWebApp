@@ -1,5 +1,5 @@
 // service worker version number
-const SW_VERSION = 2;
+const SW_VERSION = 5;
 
 // cache name including version number
 const cacheName = `ganjoor-cache-${SW_VERSION}`;
@@ -7,7 +7,10 @@ const cacheName = `ganjoor-cache-${SW_VERSION}`;
 // static files to cache
 const staticFiles = [
   "/manifest.json",
-  "/offline",
+  "/offline.html",
+  "/offline-fonts/Vazir-Bold-FD.woff2",
+  "/offline-fonts/Vazir-FD.woff2",
+  "/offline-fonts/Vazir-Medium-FD.woff2",
   "/about",
   "/privacy",
   "/faq",
@@ -18,6 +21,7 @@ const staticFiles = [
   "/images/icons/instagram.svg",
   "/images/icons/facebook.svg",
   "/images/icons/telegram.svg",
+  "/images/logo.png",
   "/images/logo-large.png"
 ];
 
@@ -120,7 +124,7 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(
       networkFirst({
         request,
-        fallbackUrl: "/offline",
+        fallbackUrl: "/offline.html",
         event,
       }),
     );
@@ -138,8 +142,11 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // Images
-  if (request.destination === "image") {
+  // Images &  Fonts
+  if (
+    request.destination === "image" ||
+    request.destination === "font"
+  ) {
     event.respondWith(
       cacheFirst({
         request,

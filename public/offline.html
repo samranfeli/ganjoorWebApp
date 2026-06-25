@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>آفلاین</title>
+    <style>
+      @font-face {
+        font-family: "vazir";
+        src: url('/offline-fonts/Vazir-FD.woff2') format('woff2');
+        font-display: swap;
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "vazir";
+        src: url('/offline-fonts/Vazir-Bold-FD.woff2') format('woff2');
+        font-display: swap;
+        font-weight: 800;
+      }
+      @font-face {
+        font-family: "vazir";
+        src: url('/offline-fonts/Vazir-Medium-FD.woff2') format('woff2');
+        font-display: swap;      
+        font-weight: 600;
+      }
+      body{
+        font-family: "vazir";
+      }
+      .offline-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding-top: 15vh;
+        padding-bottom: 15vh;
+      }
+      .icon{
+        display: inline-block;
+        margin-left: 10px;
+        vertical-align: middle;
+      }
+      .image{
+        max-width: 100%;
+        margin-bottom: 10px;
+      }
+      p{
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="offline-wrapper">
+      <img
+        src="/images/logo.png"
+        alt="ganjoor logo"
+        class="image"
+        sizes="(max-width: 767px) 80px, 112px"
+      />
+      <strong> متاسفانه ارتباط با گنجور برقرار نشد. </strong>
+      <p class="text-base">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon"
+          aria-hidden="true"
+        >
+          <path d="M12 20h.01"></path>
+          <path d="M8.5 16.429a5 5 0 0 1 7 0"></path>
+          <path d="M5 12.859a10 10 0 0 1 5.17-2.69"></path>
+          <path d="M19 12.859a10 10 0 0 0-2.007-1.523"></path>
+          <path d="M2 8.82a15 15 0 0 1 4.177-2.643"></path>
+          <path d="M22 8.82a15 15 0 0 0-11.288-3.764"></path>
+          <path d="m2 2 20 20"></path>
+        </svg>
+        اتصالتان به اینترنت را بررسی کنید
+      </p>
+    </div>
+  </body>
+</html>
