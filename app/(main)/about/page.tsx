@@ -83,7 +83,7 @@ export default function About() {
           <a href="https://www.instagram.com/sone.nejati">مجید نجاتی</a> است.
         </Text>
         <Image
-          src="https://i.ganjoor.net/ganjoor.png"
+          src="/images/logo-large.png"
           alt="لوگوی گنجور طراحی شده توسط آقای مجید نجاتی"
           className="w-44 h-44 mx-auto"
           width={384}

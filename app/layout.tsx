@@ -4,10 +4,14 @@ import QueryProvider from "@/providers/query-provider";
 import { vazir } from "@/lib/fonts";
 import Footer from "@/components/layout/footer";
 import { ThemeProvider } from "@/providers/theme-context";
+import SWRegister from "./sw-register";
 
 export const metadata: Metadata = {
   title: "گنجور",
   description: "گنجینه شعر فارسی",
+    appleWebApp: {
+    title: "گنجور",
+  },
 };
 
 export default function RootLayout({
@@ -23,6 +27,7 @@ export default function RootLayout({
     >
       <ThemeProvider>
         <QueryProvider>
+          <SWRegister />
           <body className="min-h-screen flex flex-col dark:bg-red-600" dir="rtl">
             {children}
             <Footer />
