@@ -14,7 +14,7 @@ export default function MainHeader() {
             alt="ganjoor logo"
             width={112}
             height={112}
-            className="w-16 h-16 md:w-20 md:h-20"
+            className="w-20 h-20 md:w-28 md:h-28 mx-auto"
             sizes="(max-width: 767px) 64px, 80px"
             priority
             fetchPriority="high"

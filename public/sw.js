@@ -1,5 +1,5 @@
 // service worker version number
-const SW_VERSION = 1;
+const SW_VERSION = 2;
 
 // cache name including version number
 const cacheName = `ganjoor-cache-${SW_VERSION}`;
@@ -148,11 +148,6 @@ self.addEventListener("fetch", (event) => {
     );
     return;
   }
-
-// Next.js RSC requests
-if (url.searchParams.has("_rsc")) {
-  return;
-}
 
 // API
 if (url.pathname.startsWith("/api")) {
