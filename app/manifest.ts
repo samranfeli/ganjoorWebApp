@@ -1,7 +1,9 @@
+import { siteConfig } from "@/lib/config/site";
 import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
+    id: siteConfig.url,
     name: "گنجور",
     short_name: "گنجور",
     description: "مجموعه‌ آثار سخنسرایان پارسی‌گو",
@@ -28,6 +30,22 @@ export default function manifest(): MetadataRoute.Manifest {
         sizes: "512x512",
         type: "image/png"
       },
+    ],
+    screenshots: [
+      {
+        src: '/screenshots/desktop.png',
+        sizes: '1269x814',
+        type: 'image/png',
+        form_factor: 'wide',
+        label: 'Ganjoor Desktop View'
+      },
+      {
+        src: '/screenshots/mobile.png',
+        sizes: '414x816',
+        type: 'image/png',
+        form_factor: 'narrow',
+        label: 'Ganjoor Mobile View'
+      }
     ],
   };
 }
