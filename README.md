@@ -6,6 +6,14 @@ A modern Progressive Web App built with Next.js for browsing Persian poetry, foc
 
 * Live: https://ganjoor-pwa.netlify.app
 
+## Preview
+
+![Home](docs/images/home.png)
+
+![Poet](docs/images/poet.png)
+
+![Poem](docs/images/poem.png)
+
 ## Highlights
 
 - Built with Next.js App Router
