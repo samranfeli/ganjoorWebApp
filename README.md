@@ -9,10 +9,10 @@ A modern Progressive Web App built with Next.js for browsing Persian poetry, foc
 ## Preview
 
 <p align="center">
-  <img src="docs/images/home.png" width="250" />
-  <img src="docs/images/poet.png" width="250" />
+  <img src="docs/images/home.png" width="250" />  
   <img src="docs/images/poem.png" width="250" />
 </p>
+<img src="docs/images/poet.png" width="650" />
 
 ## Highlights
 
