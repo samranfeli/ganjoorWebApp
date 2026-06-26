@@ -2,9 +2,17 @@ import SearchForm from "@/components/search/search-form";
 import SearchList from "@/components/search/search-list";
 import Container from "@/components/ui/container";
 import Heading from "@/components/ui/typography/heading";
+import { Metadata } from "next";
 
 type SearchPageProps = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
  export default async function Search({ searchParams }: SearchPageProps) { 

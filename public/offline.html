@@ -47,6 +47,15 @@
       p{
         margin: 0;
       }
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+      .nav a {
+        text-decoration: none;
+        color: #bf3f2a;
+      }
     </style>
   </head>
   <body>
@@ -57,8 +66,7 @@
         class="image"
         sizes="(max-width: 767px) 80px, 112px"
       />
-      <strong> متاسفانه ارتباط با گنجور برقرار نشد. </strong>
-      <p class="text-base">
+      <strong>        
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -80,8 +88,18 @@
           <path d="M22 8.82a15 15 0 0 0-11.288-3.764"></path>
           <path d="m2 2 20 20"></path>
         </svg>
-        اتصالتان به اینترنت را بررسی کنید
+         متاسفانه ارتباط با گنجور برقرار نشد. 
+        </strong>
+      <p>
+        شما همچنان می‌توانید از بخش‌های زیر استفاده کنید:
       </p>
+      <nav class="nav">
+        <a href="/"> صفحه اصلی </a>
+        <a href="/about"> معرفی </a>
+        <a href="/faq"> پرسشهای متداول </a>
+        <a href="/privacy"> حریم خصوصی </a>
+        <a href="/contact"> ارتباط با ما </a>
+      </nav>
     </div>
   </body>
 </html>
