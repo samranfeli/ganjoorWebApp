@@ -48,6 +48,7 @@ export default async function Poem({ params }: PoetPageProps) {
     }
   })();
 
+  const poetName = data.poetOrCat?.poet.name;
   const imagePath =
     data.poetOrCat?.poet.imageUrl ?? data.poem?.category?.poet?.imageUrl;
 
@@ -94,7 +95,7 @@ export default async function Poem({ params }: PoetPageProps) {
   return (
     <Container className="py-10">
       {poetImageUrl && (
-        <Link href={`/${poetUrl}`}>
+        <Link href={`/${poetUrl}`} aria-label={poetName}>
           <Image
             src={poetImageUrl}
             alt=""
