@@ -10,7 +10,6 @@ A modern Progressive Web App built with Next.js for browsing Persian poetry, foc
 
 * Browse poets and poems
 * Full-text search with infinite scrolling
-* Random couplet page
 * Responsive design
 * Progressive Web App (Installable)
 * Offline support
@@ -68,12 +67,6 @@ Powered by the Ganjoor API.
 npm install
 npm run dev
 ```
-
-## Future Improvements
-
-* Advanced search filters
-* Poem XML sitemap generation
-* End-to-end testing with Playwright
 
 ## License
 
