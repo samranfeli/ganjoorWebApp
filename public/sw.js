@@ -1,5 +1,5 @@
 // service worker version number
-const SW_VERSION = 5;
+const SW_VERSION = 7;
 
 // cache name including version number
 const cacheName = `ganjoor-cache-${SW_VERSION}`;
@@ -36,57 +36,51 @@ self.addEventListener("install", (event) => {
 });
 
 const putInCache = async (request, response) => {
+  if (!response || !response.ok) return;
+
   const cache = await caches.open(cacheName);
   await cache.put(request, response);
 };
 
-const networkFirst = async ({ request, fallbackUrl, event }) => {
-  try {
-    const responseFromNetwork = await fetch(request);
+const staleWhileRevalidate = async ({ request, fallbackUrl }) => {
+  const cachedResponse = await caches.match(request);
 
-    if (responseFromNetwork.ok){
-      event.waitUntil(putInCache(request, responseFromNetwork.clone()));
-    }
+  // Cache Hit
+  if (cachedResponse) {
 
-    return responseFromNetwork;
-  } catch (error) {
-    const responseFromCache = await caches.match(request);
+    // Update cache in background
+    (async () => {
+      try {
+        const response = await fetch(request);
 
-    if (responseFromCache) {
-      return responseFromCache;
-    }
+        await putInCache(request, response.clone());
 
-    const fallbackResponse = await caches.match(fallbackUrl);
-
-    if (fallbackResponse) {
-      return fallbackResponse;
-    }
-
-    return new Response("Offline", {
-      status: 503,
-      headers: {
-        "Content-Type": "text/plain",
-      },
-    });
-  }
-};
-
-const cacheFirst = async ({ request, event }) => {
-  const responseFromCache = await caches.match(request);
-
-  if (responseFromCache) {
-    return responseFromCache;
-  }
-
-  try {
-    const responseFromNetwork = await fetch(request);
-      if (responseFromNetwork.ok){
-        event.waitUntil(
-          putInCache(request, responseFromNetwork.clone())
-        );
+      } catch {
+        // Ignore network errors
       }
-    return responseFromNetwork;
+    })();
+
+    return cachedResponse;
+  }
+
+  // Cache Miss
+  try {
+    const response = await fetch(request);
+
+    await putInCache(request, response.clone());
+
+    return response;
+
   } catch {
+
+    if (fallbackUrl) {
+      const fallback = await caches.match(fallbackUrl);
+
+      if (fallback) {
+        return fallback;
+      }
+    }
+
     return Response.error();
   }
 };
@@ -112,56 +106,51 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   const request = event.request;
-
   const url = new URL(request.url);
 
-  if (event.request.method !== "GET") {
+  if (request.method !== "GET") {
+    return;
+  }
+
+  const isNavigation = request.mode === "navigate";
+
+  const isApi = url.pathname.startsWith("/api");
+
+  const isStatic = url.pathname.startsWith("/_next/static/");
+
+  const isCacheableAsset =
+    request.destination === "image" ||
+    request.destination === "font" ||
+    request.destination === "style" ||
+    request.destination === "script";
+
+  // API
+  if (isApi) {
+    event.respondWith(fetch(request));
     return;
   }
 
   // HTML Pages
-  if (request.mode === "navigate") {
+  if (isNavigation) {
     event.respondWith(
-      networkFirst({
+      staleWhileRevalidate({
         request,
         fallbackUrl: "/offline.html",
-        event,
       }),
     );
     return;
   }
 
-  if (event.request.url.includes("/_next/static/")) {
+  // JS / CSS / Images / Fonts / _next/static
+  if (isStatic || isCacheableAsset) {
     event.respondWith(
-      cacheFirst({
-        request: event.request,
-        event,
-      }),
-    );
-
-    return;
-  }
-
-  // Images &  Fonts
-  if (
-    request.destination === "image" ||
-    request.destination === "font"
-  ) {
-    event.respondWith(
-      cacheFirst({
+      staleWhileRevalidate({
         request,
-        event,
       }),
     );
     return;
   }
 
-// API
-if (url.pathname.startsWith("/api")) {
+  // Everything else
   event.respondWith(fetch(request));
-  return;
-}
-
-event.respondWith(fetch(request));
-
 });
